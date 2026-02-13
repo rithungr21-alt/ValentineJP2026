@@ -1,84 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Valentine</title>
-            <style>
+    <style>
         :root { 
-    --bg-color: #f3e5f5; /* Light Lavender Background */
-    --accent-purple: #6a1b9a; /* Deep Royal Purple */
-    --soft-purple: #9c27b0; /* Vibrant Orchid */
-    --vintage-silver: #b0bec5; /* Muted Silver accent */
-    --white-paper: #ffffff;
-}
+            --bg-color: #f3e5f5; 
+            --accent-purple: #6a1b9a; 
+            --soft-purple: #9c27b0; 
+            --white-paper: #ffffff;
+        }
+        body { 
+            background-color: var(--bg-color); 
+            font-family: 'Georgia', serif; 
+            padding: 20px; 
+            text-align: center; 
+            color: #2e1a47; 
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Retro Film Texture Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+        .distance-badge { 
+            display: inline-block; 
+            padding: 8px 18px; 
+            border: 1.5px solid var(--soft-purple); 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            color: var(--soft-purple); 
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        h1 { color: var(--accent-purple); font-style: italic; font-size: 2rem; }
+        .main-photo { 
+            width: 100%; 
+            max-width: 350px; 
+            border: 8px solid white; 
+            box-shadow: 0 15px 35px rgba(106, 27, 154, 0.2); 
+            border-radius: 4px;
+            transform: rotate(1deg);
+        }
+        .love-letter { 
+            background: var(--white-paper); 
+            padding: 30px; 
+            margin: 35px 0; 
+            box-shadow: 8px 8px 0px var(--soft-purple); 
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        .tamil-text { font-size: 1.4rem; font-weight: bold; color: var(--accent-purple); display: block; margin-bottom: 10px; }
+        .yt-btn {
+            display: inline-block;
+            background: var(--accent-purple);
+            color: white !important;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .interactive-btn { 
+            background: var(--soft-purple); 
+            color: white; 
+            border: none; 
+            padding: 16px 35px; 
+            border-radius: 50px; 
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        #hidden-message { 
+            display: none; 
+            color: var(--accent-purple); 
+            margin-top: 25px; 
+            font-weight: bold; 
+            font-style: italic;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            color: var(--soft-purple);
+            font-size: 24px;
+            animation: floatUp 4s linear forwards;
+            z-index: 2000;
+        }
+        @keyframes floatUp {
+            to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="distance-badge">Miles Apart, Hearts Together</div>
+        <h1>Happy Valentine's Day</h1>
 
-body { 
-    background-color: var(--bg-color); 
-    font-family: 'Georgia', serif; 
-    padding: 20px; 
-    text-align: center; 
-    color: #2e1a47; /* Very dark purple text */
-    overflow-x: hidden;
-}
+        <img src="https://i.ibb.co/HDDzbRSB/1771006673119.png" alt="Our Memory" class="main-photo">
 
-/* Retro Film Texture Overlay */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/stardust.png');
-    opacity: 0.15;
-        </style>
-    </head>
-    <body>
-        <div class="container">
-    <div class="distance-badge">Miles Apart, Hearts Together</div>
-    <h1>Happy Valentine's Day</h1>
-
-  <a href="https://ibb.co/KjjqfBPb"><img src="https://i.ibb.co/HDDzbRSB/1771006673119.png" alt="1771006673119" border="0" class="main-photo"></a>
-
-    <div class="love-letter">
-        <p class="tamil-text">"நான் யாரிடமும் பகிர முடியாத அழகான ரகசியம் நீ"</p>
-        <p>Miss Lotz pa ♥</p>
-        <p>i feel very comfortable with you , i don't know why but i do. Happy Valentine's Day, my love.</p>
-    </div>
-
-    <div class="music-box">
-    
-        <a href="https://www.instagram.com/reel/DQcLBL1CPEi/?igsh=MWd5cTJjZjF1dXR6aw==" target="_blank" class="yt-btn">
-            ▶ My Intentions With you 
-        </a>
-    </div>
-
-    <button class="interactive-btn" onclick="revealMessage()">Click for a Secret Message</button>
-    <div id="hidden-message">
-        <p>Waiting for the day, When I will see You and Hug you tightly..!!. ♥</p>
-    </div>
+        <div class="love-letter">
+            <span class="tamil-text">நான் யாரிடமும் பகிர முடியாத அழகான ரகசியம் நீ ❤️</span>
+            <p>Miss Letz pa ❤️</p>
+            <p>I feel very comfortable with you, I don't know why but I do. Happy Valentine's Day, my love.</p>
         </div>
 
-            <script>
-                function revealMessage() {
-    // Show the hidden message
-    document.getElementById('hidden-message').style.display = 'block';
-    
-    // Create floating hearts
-    for (let i = 0; i < 20; i++) {
-        setTimeout(createHeart, i * 150);
-    }
-}
+        <div class="music-box">
+            <a href="https://www.instagram.com/reel/DQcLBL1CPEi/?igsh=MWd5cTJjZjF1dXR6aw==" target="_blank" class="yt-btn">
+                ▶ My Intentions With You
+            </a>
+        </div>
 
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'floating-heart';
-    heart.innerHTML = '❤';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.opacity = Math.random();
-    document.body.appendChild(heart);
-    
-    // Remove heart after animation
-    setTimeout(() => { heart.remove(); }, 4000);
-}
-            </script>
-    </body>
+        <button class="interactive-btn" onclick="revealMessage()">Click for a Secret Message</button>
+        <div id="hidden-message">
+            <p>Waiting for the day, when I will see You and Hug you tightly..!! ♥</p>
+        </div>
+    </div>
+
+    <script>
+        function revealMessage() {
+            document.getElementById('hidden-message').style.display = 'block';
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createHeart, i * 150);
+            }
+        }
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+    </script>
+</body>
 </html>
